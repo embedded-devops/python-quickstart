@@ -11,5 +11,12 @@ def index():
 
     return render_template('index.html', products=data)
 
+@app.route("/test")
+def index():
+    with open('data/products.json') as f:
+        data = json.load(f)
+
+    return render_template('index.html', products=data)
+
 if __name__ == "__main__":
     app.run(debug=True)
